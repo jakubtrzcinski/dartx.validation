@@ -1,0 +1,10 @@
+builders:
+  mapper:
+    import: "package:dartx_validation_generator/integrations/builder.dart"
+    builder_factories: ["dartx_validationBuilder"]
+    build_extensions: { ".dart": ["mapper.g.dart"] }
+    auto_apply: dependents
+    build_to: source
+    # applies_builders: ["source_gen|combining_builder"]
+    runs_before: ["injectable_generator|injectable_builder"]
+    required_inputs: [".g.dart"]
